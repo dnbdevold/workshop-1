@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: no.dnb
+---
+testFramework: junit
+sourceLanguage: java
