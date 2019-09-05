@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  zookeeper:
+    image: zookeeper
+    ports:
+      - 2181:2181
+
+  kafka:
+    build:
+      context: ./
+      dockerfile: kafka.Dockerfile
+    ports:
+      - 9092:9092
+    depends_on:
+      - zookeeper
+    environment:
+      ZOOKEEPER_HOST: zookeeper:2181
